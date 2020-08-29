@@ -29,13 +29,43 @@ class stack(_size : Int =5){
             top--
         }
     }
+    fun display(){
+        if (top==-1){
+            println("stack is underflow")
+        }
+        else{
+            var i = top
+            while(i>=0){
+                println(arr[i])
+                i--
+            }
+        }
+
+    }
 }
 
 
 
 
 fun main(args: Array<String>) {
-    val x = readLine()
+    print("enter the size of stack: ")
+    val size = Integer.parseInt(readLine())
+    val st = stack(size)
+    println("enter 1 for push\nenter 2 for pop\nenter 3 for display\nenter 4 for exit")
+    while(true){
+        print("enter choice: ")
+        var x =Integer.parseInt(readLine())
+        when(x){
+            1->{
+                print("enter value: ")
+                var value =Integer.parseInt(readLine())
+                st.push(value)
+            }
+            2->st.pop()
+            3->st.display()
+            else->break
+        }
+    }
   
     
    

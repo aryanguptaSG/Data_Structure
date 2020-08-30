@@ -1,4 +1,4 @@
-const input = require("prompt-sync");
+const input = require("prompt-sync")();
  
 class queue{
     constructor(size=5){
@@ -51,14 +51,20 @@ class queue{
 
 
 var qu =new queue();
-qu.push(1);
-qu.push(2);
-qu.push(3);
-qu.display();
-qu.pop();
-qu.display();
-qu.push(4);
-qu.push(5);
-qu.pop();
-qu.push(6);
-qu.display();
+console.log("1: push \n2: pop \n3: display\n4: exit");
+while(true){
+    var x=input("enter choice: ");
+    if(x==1){
+        var value = Number(input("enter value: "));
+        qu.push(value);
+    }
+    else if(x==2){
+        qu.pop();
+    }
+    else if(x==3){
+        qu.display();
+    }
+    else{
+        break;
+    }
+}

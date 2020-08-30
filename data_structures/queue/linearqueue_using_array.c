@@ -49,20 +49,29 @@ int main()
 {
 	struct queue qu;
 	creatqueue(&qu);
-	push(&qu,10);
-	push(&qu,20);
-	display(&qu);
-	pop(&qu);
-	push(&qu,30);
-	pop(&qu);
-	display(&qu);
-	push(&qu,40);
-	push(&qu,50);
-	pop(&qu);
-	push(&qu,60);
-	display(&qu);
-	pop(&qu);
-	pop(&qu);
-	pop(&qu);
+	while(1){
+		printf("\npress 1 for push\npress 2 for pop\npress 3 for display\npress 4 for exit\nenter choice: ");
+		int i;
+		scanf("%d",&i);
+		if (i==1)
+		{
+			int value;
+			printf("enter the value: ");
+			scanf("%d",&value);
+			push(&qu,value);
+		}
+		else if (i==2)
+		{
+			pop(&qu);
+		}
+		else if (i==3)
+		{
+			display(&qu);
+		}
+		else
+		{
+			break;
+		}
+	}
 	return 0;
 }

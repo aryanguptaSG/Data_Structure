@@ -29,9 +29,6 @@ class Stack():
             s = s + str(self.arr[i]) + "\n"
         return s
 
-
-
-
 def postfix(expression):
 	output = ""
 	st = Stack(20)
@@ -80,8 +77,6 @@ def postfix(expression):
 
 	return output
 
-
-
 def prefix(expression):
 	output = ""
 	for i in range(len(expression)-1, -1,-1):
@@ -100,9 +95,6 @@ def prefix(expression):
 	return result
 
 
-
-
-
 expression = input().strip()
 post= postfix(expression)
 pri = prefix(expression)
@@ -110,16 +102,5 @@ pri = prefix(expression)
 print("Postfix of expression is : ",post)
 
 print("Prifix of expression is : ",pri)
-
-
-
-
-
-
-
-
-
-
-
 
 
